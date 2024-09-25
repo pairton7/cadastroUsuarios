@@ -1,7 +1,4 @@
-# Cadastro e Login
-<h1>
-    <img src="public/apresentacao1.gif">
-</h1>
+# Cadastro de Usuários
 
 # Indice
 
@@ -11,7 +8,7 @@
 
 ## 🔖&nbsp; Sobre
 
-O projeto **Cadastro e Login** é uma aplicação front-end para cadastro, autenticação e CRUD do usuário via API REST simulado com JSON-SERVER, foi desenvolvida com o objetivo de aprimorar meus conhecimentos no framework Angular.
+O projeto **Cadastro de Usuários** é uma aplicação front-end para cadastro, autenticação e CRUD do usuário via API REST desenvolvida em Python. Foi desenvolvida com o objetivo de avaliar meus conhecimentos em Angular num processo de seleção da Empresa SXComercio.
 
 ---
 
@@ -23,18 +20,13 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Angular](https://angular.io/)
+- [Node - v20.17.0]
 
 ---
 
-## 🗂 Como baixar o projeto
-
-```bash
-    # Clonar o repositório
-    $ git clone https://github.com/KellyVasconcellos/cadastro-login-angular.git
-    # Entrar no diretório
-    $ cd cadastro-login-angular
-```
-
+## 🗂 Como instaciar o Projeto
+- npm install ( para atualizar as dependencias )
+- npm run start ( para levantar o Projeto )
+- http://localhost:4200 ( iniciar o Projeto no browser )
 ---
-
-Desenvolvido 💜 por Kelly Vasconcellos
+Desenvolvido por Pedro Airton da Silva
