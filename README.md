@@ -8,7 +8,7 @@
 
 ## 🔖&nbsp; Sobre
 
-O projeto **Cadastro de Usuários** é uma aplicação front-end para cadastro, autenticação e CRUD do usuário via API REST desenvolvida em Python. Foi desenvolvida com o objetivo de avaliar meus conhecimentos em Angular num processo de seleção da Empresa SXComercio.
+O projeto **Cadastro de Usuários** é uma aplicação front-end para cadastro, autenticação e CRUD do usuário via API REST desenvolvida em Python. Foi desenvolvida com o objetivo de avaliar meus conhecimentos em Angular num processo de seleção da Empresa SXNegócios.
 
 ---
 
