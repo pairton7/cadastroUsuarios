@@ -1,0 +1,34 @@
+<div class="caixa">
+  <div class="caixa-login caixa-login-two">
+    <div class="area-de-login area-de-login-two">
+      <h2 class="primeiro-titulo" style="text-align: center;">Cadastrar novo colaborador</h2>
+      <p class="p-titulo1">cadastre os seus dados para acessar as aplicações.</p>
+      <button class="botao-entrar" (click)="btnInscrever()" >Incluir novo</button>
+    </div>
+    <div class="criar-login criar-login-two">
+      <h2 class="segundo-titulo">Acessar Cadastro de Usuários</h2>
+
+      <p class="p-titulo2">Informe usuário e senha</p>
+      <form class="form" (ngSubmit)="logar()" [formGroup]="formLogar">
+        <label  class="form-login" for="email">
+          <i class="far fa-user icon-modify"></i>
+          <input type="text" id="email" placeholder="E-mail" formControlName="email">
+        </label>
+        <span *ngIf="formLogar.get('email')?.errors?.['required'] && submetido">
+          Campo obrigatório
+        </span>
+        <label class="form-login" for="senha">
+          <i class="fas fa-lock icon-modify"></i>
+          <input type="password" id="senha" placeholder="Senha" formControlName="senha">
+        </label>
+        <span *ngIf="formLogar.get('senha')?.errors?.['required'] && submetido">
+          Campo obrigatório
+        </span>
+        <span>{{mensagemErro}}</span>
+        <br>
+        <h4>Esqueceu sua senha?</h4>
+        <button type="submit" class="botao-form">Entrar</button>
+      </form>
+    </div>
+  </div>
+</div>

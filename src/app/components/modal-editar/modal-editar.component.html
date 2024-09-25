@@ -1,0 +1,88 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">Editar dados do usuário</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-describedby="modal-title"
+    (click)="modal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <div class="formulario">
+    <form class="form" (ngSubmit)="editar()" [formGroup]="formEditar">
+
+      <label  class="form-login" for="nome">
+        <i class="far fa-user icon-modify"></i>
+        <input type="text" id="nome" placeholder="Nome" formControlName="nome">
+      </label>
+      <span *ngIf="(formEditar.get('nome')?.touched || submetido) && formEditar.get('nome')?.errors?.['required']">
+        Campo obrigatório
+      </span>
+
+      <label class="form-login" for="email">
+        <i class="far fa-envelope icon-modify"></i>
+        <input type="text" id="email" placeholder="E-mail" formControlName="email">
+      </label>
+      <span *ngIf="(formEditar.get('email')?.touched || submetido) && formEditar.get('email')?.errors?.['required']">
+        Campo obrigatório
+      </span>
+      <span *ngIf="formEditar.get('email')?.touched && formEditar.get('email')?.status === 'INVALID'">
+        Deve ser um e-mail válido
+      </span>
+
+      <label class="form-login" for="adm" style="display: flex; align-items: center;">
+        <i class="far fa-user icon-modify"></i> <!-- Ícone -->
+        <span class="label-text" style="margin-left: 5px; color: #6c757d;">Administrador</span> <!-- Aplica a cor do "Status" -->
+        <select id="adm" formControlName="adm" style="margin-left: 10px;">
+          <option [ngValue]="true">Sim</option>
+          <option [ngValue]="false">Não</option>
+        </select>
+      </label>
+      <span *ngIf="(formEditar.get('adm')?.touched || submetido) && formEditar.get('adm')?.errors?.['required']">
+        Campo obrigatório
+      </span>
+
+      <label class="form-login" for="status" style="display: flex; align-items: center;">
+        <i class="far fa-user icon-modify"></i> <!-- Ícone -->
+        <span class="label-text" style="margin-left: 5px; color: #6c757d;">Status</span> <!-- Aplica a cor do "Status" -->
+        <select id="status" formControlName="status" style="margin-left: 10px;">
+          <option [ngValue]="true">Ativo</option>
+          <option [ngValue]="false">Inativo</option>
+        </select>
+      </label>
+      <span *ngIf="(formEditar.get('status')?.touched || submetido) && formEditar.get('status')?.errors?.['required']">
+        Campo obrigatório
+      </span>
+
+      <div class="form-floating">
+        <label for="expiraem">
+          dias de vigência
+        </label>
+        <input
+          type="number"
+          id="expiraem"
+          formControlName="expiraem"
+          min="0"
+          max="999"
+          maxlength="3"
+          oninput="if(this.value.length > 3) this.value = this.value.slice(0, 3);"
+        />
+      </div>
+      <span *ngIf="(formEditar.get('expiraem')?.touched || submetido) && formEditar.get('expiraem')?.errors?.['required']">
+        Campo obrigatório
+      </span>
+   <label class="form-login" for="senha">
+        <i class="fas fa-lock icon-modify"></i>
+        <input type="password" id="senha" placeholder="Senha" formControlName="senha">
+      </label>
+      <span *ngIf="(formEditar.get('senha')?.touched || submetido) && formEditar.get('senha')?.errors?.['required']">
+        Campo obrigatório
+      </span>
+      <span *ngIf="formEditar.get('senha')?.touched && formEditar.get('senha')?.status === 'INVALID'">
+        A senha deve ter no mínimo 8 caracteres, pelo menos 1 letra maiúscula, 1 minúscula, 1 número e 1 caracter especial
+      </span>
+      <br>
+      <button class="botao-form" type="submit">Salvar</button>
+    </form>
+  </div>
+</div>

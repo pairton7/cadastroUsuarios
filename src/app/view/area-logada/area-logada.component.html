@@ -1,0 +1,39 @@
+<div class="caixa-tabela" style="position: relative; min-height: 500px;"> <!-- Define uma altura mínima -->
+  <div [ngClass]="{'alert_opacity':alert}" class="alert alert-success" role="alert">
+    {{mensagem}}
+  </div>
+  <div class="background-cinza">
+    <h2 class="primeiro-titulo">Usuários Cadastrados</h2>
+    <!-- Botão Voltar -->
+<!--    <button class="botao-voltar" (click)="voltar()">Voltar</button>-->
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Administrador</th>
+        <th scope="col">Status</th>
+        <th scope="col">Vigência em dias</th>
+        <th scope="col">Data Cadastro</th>
+        <th scope="col">Última atualização</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of usuarios">
+        <td>{{item.nome}}</td>
+        <td>{{item.email}}</td>
+        <td>{{ item.adm ? 'sim' : 'não' }}</td>
+        <td>{{ item.status ? 'ativo' : 'inativo' }}</td>
+        <td>{{item.expiraem}}</td>
+        <td>{{item.dtcadastro}}</td>
+        <td>{{item.dtatualizacao}}</td>
+        <td><a title="editar" (click)="modalEditar(item)"><i class="fa-solid fa-pen-to-square"></i></a></td>
+        <td><a title="deletar" (click)="modalDeletar(item.id)"><i class="fa-solid fa-trash"></i></a></td>
+      </tr>
+      </tbody>
+    </table>
+    <button class="botao-voltar" (click)="voltar()">Voltar</button>
+  </div>
+</div>
